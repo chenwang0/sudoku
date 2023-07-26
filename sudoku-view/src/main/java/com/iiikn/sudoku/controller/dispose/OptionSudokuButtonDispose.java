@@ -11,8 +11,8 @@ import com.sudoku.SudokuSolverEnhance;
 @Component
 public class OptionSudokuButtonDispose implements SudokuButtonDispose {
 
-//	@Autowired
-	SudokuSolverEnhance sudokuSolverEnhance = SudokuService.sudokuSolverEnhance;
+	@Autowired
+	SudokuSolverEnhance sudokuSolverEnhance;
 
 	@Override
 	public void buttonActHandle(SudokuButton button) {

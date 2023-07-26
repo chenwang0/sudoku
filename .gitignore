@@ -1,0 +1,13 @@
+*.log
+*.temp
+/vendor
+
+**/target
+
+*.iml
+/.idea
+.idea/**
+.idea/inspectionProfiles
+
+**/test
+

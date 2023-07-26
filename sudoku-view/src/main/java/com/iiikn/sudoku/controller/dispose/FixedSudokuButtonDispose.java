@@ -1,7 +1,6 @@
 package com.iiikn.sudoku.controller.dispose;
 
 import com.iiikn.annotaion.Component;
-import com.iiikn.annotaion.Piling;
 import com.iiikn.sudoku.entity.SudokuButton;
 
 @Component

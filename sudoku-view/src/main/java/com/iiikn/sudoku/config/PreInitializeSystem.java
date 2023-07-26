@@ -2,11 +2,6 @@ package com.iiikn.sudoku.config;
 
 import com.iiikn.annotaion.Configuration;
 import com.iiikn.annotaion.Element;
-import com.iiikn.annotaion.Piling;
-import com.iiikn.sudoku.controller.factory.SudokuShapeFactory;
-import com.iiikn.sudoku.controller.factory.SudokuViewFactory;
-import com.iiikn.sudoku.controller.processor.impl.MonitorArrangementShapePostProcessor;
-import com.iiikn.sudoku.controller.processor.impl.OverallArrangementViewPostProcessor;
 import com.iiikn.sudoku.service.SudokuService;
 import com.iiikn.sudoku.view.SudokuView;
 import com.iiikn.sudoku.view.component.SudokuBlockPanelComponent;
@@ -25,19 +20,19 @@ import javax.swing.*;
 public class PreInitializeSystem {
 
 
-//	@Element("sudokuSolverEnhance")
+	@Element("sudokuSolverEnhance")
 	public SudokuSolverEnhance sudokuSolverEnhance() {
 		return SudokuSolverEnhance.init();
 	}
 
 
-//	@Element("sudokuFrame")
+	@Element("sudokuFrame")
 	public JFrame sudokuFrame(){
 		return SudokuService.getSudokuFrame();
 	}
 
 
-//	@Element("sudokuSwing")
+	@Element("sudokuSwing")
 	public SudokuView sudokuSwing(SudokuView sudokuSwing) {
 		SudokuBlockPanelComponent sudokuBlockPanelComponent = new SudokuBlockPanelComponent(SudokuService.getSudokuFrame(), SudokuService.getSudokuBlockPanels());
 		SudokuOptionButtonComponent sudokuOptionButtonComponent = new SudokuOptionButtonComponent(SudokuService.getSudokuFrame(), SudokuService.getOptionBtn());

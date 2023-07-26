@@ -2,8 +2,6 @@ package com.iiikn.sudoku.controller;
 
 import com.iiikn.annotaion.Autowired;
 import com.iiikn.annotaion.Component;
-import com.iiikn.annotaion.Seek;
-import com.iiikn.annotaion.Piling;
 import com.iiikn.sudoku.controller.factory.SudokuShapeFactory;
 import com.iiikn.sudoku.controller.factory.SudokuViewFactory;
 

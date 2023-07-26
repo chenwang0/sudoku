@@ -29,8 +29,8 @@ public class SudokuView implements SudokuFactory<SudokuViewComponent> {
 		this.registerProcessor(sudokuSysExitButtonComponent);
 	}
 
-//	@Autowired
-	JFrame sudokuFrame = SudokuService.getSudokuFrame();
+	@Autowired
+	JFrame sudokuFrame;
 
 	public void initialize() {
 		// 消除边框

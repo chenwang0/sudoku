@@ -1,5 +1,7 @@
 package com.iiikn.util;
 
+import com.iiikn.factory.processor.ElementPostProcessor;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -8,7 +10,8 @@ import java.util.Enumeration;
 import java.util.List;
 import java.util.Objects;
 
-public class ClassScanner {
+public class ClassUtil {
+
     public static List<Class<?>> scan(String packageName) throws ClassNotFoundException, IOException {
         List<Class<?>> classes = new ArrayList<>();
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
@@ -22,10 +25,21 @@ public class ClassScanner {
                     classes.addAll(scan(packageName + "." + classFile.getName()));
                 } else if (classFile.getName().endsWith(".class")) {
                     String className = packageName + "." + classFile.getName().replace(".class", "");
-                    Class<?> clazz = Class.forName(className); classes.add(clazz);
+                    Class<?> clazz = Class.forName(className);
+
+                    // 排除接口和注解、枚举
+                    if (!clazz.isInterface() && !clazz.isAnnotation() && !clazz.isEnum()){
+                        classes.add(clazz);
+                    }
                 }
             }
         }
         return classes;
+    }
+
+
+    public static boolean isExtendsInterface(Class<?> supplierClazz, Class<?> targetClazz) {
+
+        return supplierClazz.isAssignableFrom(targetClazz) && !targetClazz.isInterface();
     }
 }
