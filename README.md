@@ -1,2 +1,2 @@
 # sudoku
-realize sudoku
+初步实现spring ioc容器雏形，在此之前已经完成了suduku的窗体操作和suduku矩阵生成，优化方向也是先把小应用的基础结构做好，然后在基础上不断加入新功能。
